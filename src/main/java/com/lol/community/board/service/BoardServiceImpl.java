@@ -1,5 +1,9 @@
 package com.lol.community.board.service;
 
+import static com.lol.community.global.exception.ExceptionType.NOT_ACCESS_BOARD;
+import static com.lol.community.global.exception.ExceptionType.NOT_EXIST_ARTICLE;
+import static com.lol.community.global.exception.ExceptionType.NOT_FOUND_ARTICLES_OF_GRADE;
+
 import com.lol.community.board.domain.Board;
 import com.lol.community.board.domain.BoardType;
 import com.lol.community.board.dto.BoardSearch;
@@ -13,16 +17,17 @@ import com.lol.community.user.domain.Grade;
 import com.lol.community.user.domain.User;
 import com.lol.community.user.service.UserService;
 import jakarta.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.*;
-
-import static com.lol.community.global.exception.ExceptionType.*;
 
 @Service
 @RequiredArgsConstructor

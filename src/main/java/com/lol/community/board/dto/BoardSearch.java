@@ -3,14 +3,13 @@ package com.lol.community.board.dto;
 import com.lol.community.board.domain.Board;
 import com.lol.community.board.dto.request.BoardSearchRequest;
 import com.lol.community.board.dto.response.BoardResponse;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-
-import java.util.List;
 
 @Getter
 @Builder

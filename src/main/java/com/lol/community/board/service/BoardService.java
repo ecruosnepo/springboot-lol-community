@@ -5,11 +5,10 @@ import com.lol.community.board.dto.request.BoardRequest;
 import com.lol.community.board.dto.request.BoardSearchRequest;
 import com.lol.community.board.dto.response.BoardMainResponse;
 import com.lol.community.board.dto.response.BoardResponse;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-
 import java.util.List;
 import java.util.Map;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface BoardService {
     Page<BoardResponse> findPageByBoardType(String boardType, Pageable pageable, BoardSearchRequest request, Integer userId);

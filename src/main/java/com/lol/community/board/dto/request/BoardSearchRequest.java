@@ -1,12 +1,11 @@
 package com.lol.community.board.dto.request;
 
+import java.util.HashMap;
+import java.util.Map;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.logging.log4j.util.Strings;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Getter
 @Setter
@@ -22,6 +21,10 @@ public class BoardSearchRequest {
 
     public boolean isEmptyCategory() {
         return categories == 0;
+    }
+
+    public boolean isEmptyGrade() {
+        return grades == 0;
     }
 
     public boolean isExistGrade() {

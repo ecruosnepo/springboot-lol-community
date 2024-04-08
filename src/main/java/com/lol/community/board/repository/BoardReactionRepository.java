@@ -2,13 +2,12 @@ package com.lol.community.board.repository;
 
 import com.lol.community.board.domain.BoardReaction;
 import com.lol.community.board.dto.response.BoardMainView;
+import java.util.List;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public interface BoardReactionRepository extends JpaRepository<BoardReaction, Integer> {
@@ -23,5 +22,7 @@ public interface BoardReactionRepository extends JpaRepository<BoardReaction, In
             "and reactoin.board.boardType =:boardType " +
             "group by reactoin.board.id")
     List<BoardMainView> findBoardsWithCount(@Param("boardType") String boardType, PageRequest pageRequest);
+
+    Boolean existsBoardReactionByBoardIdAndUserId(Integer boardId, Integer userId);
 }
 

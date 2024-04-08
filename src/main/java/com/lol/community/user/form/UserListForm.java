@@ -1,8 +1,7 @@
 package com.lol.community.user.form;
 
-import lombok.Data;
-
 import java.time.LocalDateTime;
+import lombok.Data;
 
 @Data
     public class UserListForm {

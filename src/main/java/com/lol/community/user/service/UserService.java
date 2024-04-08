@@ -1,11 +1,11 @@
 package com.lol.community.user.service;
 
+import static com.lol.community.global.exception.ExceptionType.NOT_EXIST_USER;
+
 import com.lol.community.user.domain.User;
 import com.lol.community.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import static com.lol.community.global.exception.ExceptionType.NOT_EXIST_USER;
 
 @Service
 @RequiredArgsConstructor

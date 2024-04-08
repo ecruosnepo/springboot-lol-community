@@ -3,10 +3,9 @@ package com.lol.community.category.service;
 import com.lol.community.category.domain.Category;
 import com.lol.community.category.dto.response.CategoryResponse;
 import com.lol.community.category.repository.CategoryRepository;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

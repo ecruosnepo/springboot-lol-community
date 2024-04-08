@@ -3,11 +3,10 @@ package com.lol.community.user.repository;
 import com.lol.community.user.domain.User;
 import com.lol.community.user.form.UserEditForm;
 import jakarta.persistence.EntityManager;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.Optional;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
 @Repository
 @RequiredArgsConstructor

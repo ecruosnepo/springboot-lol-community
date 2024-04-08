@@ -5,8 +5,20 @@ import com.lol.community.board.dto.response.BoardBaseResponse;
 import com.lol.community.category.domain.Category;
 import com.lol.community.global.BaseEntity;
 import com.lol.community.user.domain.User;
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ForeignKey;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.SQLDelete;
 
 @Getter
@@ -97,11 +109,16 @@ public class Board extends BaseEntity {
                 .updatedAt(this.getUpdatedAt())
                 .build();
     }
-
-    // TODO 유저 정보도 엔티티에 저장할 것
+    // TODO
+    // 1. 유저 정보도 엔티티에 저장할 것
+    // 2. 파일 변경은 다음 기회에 진행 예정
     public void update(BoardRequest request) {
         this.category = request.toEntityByUser(new User()).getCategory();
         this.title = request.getTitle();
         this.content = request.getContent();
+    }
+
+    public void updateLikeCount(Integer likeCount) {
+        this.likeCount += likeCount;
     }
 }

@@ -3,13 +3,12 @@ package com.lol.community.user.service;
 import com.lol.community.user.domain.User;
 import com.lol.community.user.form.UserEditForm;
 import com.lol.community.user.repository.UserRepositoryImpl;
+import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
